@@ -1,0 +1,22 @@
+Sujet : Dragster
+
+Cahier de charge : 
+				Autonome
+				Processuer sur carte mère
+				Sur batterie
+				Mécanique fournie
+				Code embarqué : C(++) sur STM32
+
+Composants : 
+				Moteur brushless 50A + ESC
+				Moteur pas à pas : Dynamixel XL-320
+				Batterie : 4S
+				Mécanique (custom, en cours de réalisation)
+
+Objectifs :
+				Avancer
+				Avancer de 10m
+				Avancer de 10m le plus vite possible
+Contraintes :
+				Véhicule autonome, pas de contrôle à distance. 						       Possibilité de communication pour récupérer des informations.
+

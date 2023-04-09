@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-09T13:46:35.096Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15" etag="MVF4YB7ATilwTFI0drWK" version="21.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-09T13:47:11.054Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15" etag="ER4g3jykvvlkxbAwL7j3" version="21.1.5" type="github">
   <diagram name="Page-1" id="BmPKDK8v9zG8-tpcR2I4">
     <mxGraphModel dx="1434" dy="685" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -115,6 +115,15 @@
         </mxCell>
         <mxCell id="1hGbe3STKy7xls45Atfi-45" value="Moteur brushless&lt;br&gt;R01230&lt;br&gt;50 A" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="619" y="367" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1hGbe3STKy7xls45Atfi-53" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="1hGbe3STKy7xls45Atfi-24" target="1hGbe3STKy7xls45Atfi-41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="380" as="sourcePoint" />
+            <mxPoint x="600" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="490" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

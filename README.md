@@ -30,6 +30,7 @@
 * 1 - Votre projet favorise-t-il des changements dans les modes de production et de consommation en vue de les rendre plus viables et plus responsables sur les plans social et environnemental ?
 
 
+
 * 2 - Quelle réflexion avez-vous mené au cours de ce projet autour de la réutilisation possible d'éléments matériels après votre projet ?
 
 Lors de ce projet, nous avons pris en compte plusieurs points concernant cette question. En effet, la conception du Dragster est modulaire, ce qui rend plus facile le démontage

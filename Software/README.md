@@ -1,52 +1,33 @@
-# Servo-Moteur-I2C-Slave
+# Contrôle du servomoteur Dynamixel XL-320 et du driver de moteur synchrone 50A avec la carte STM32L412KBT3
 
-Le projet qui consiste à développer un contrôleur pour commander un servo moteur à l'aide une interface I2C : Le moteur se rend à la position demandée par le message I2C.
+Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un driver de moteur synchrone 50A en utilisant la carte STM32L412KBT3. 
+Il utilise l'environnement de développement STM32CubeIDE.
 
-![Schema](./assets/schema.png)
+## Environnement de développement :
+   l'IDE STM32CubeIDE.
 
-Le **Servo Moteur I2C** est composé d'un servo-moteur HS-422 (ou équivalent) et d'une carte de développement Nucléo 64 F072RB. On pourra utiliser la carte LPC1768 (ou n'importe quelle autre carte I2C) pour jouer le rôle du Contrôleur I2C.
+## Configuration des broches GPIO :
+### - Pour le servo-moteur :
+  Connection de la broche de signal PMW du servo-moteur à la broche PA0 sur la carte STM32L412KBT3. 
+  Pour les autres broches de servo la broche d'alimentaion et connecter avec +7.5V et GND avec GND de la carte.
 
-Code de départ pour le [contrôleur maitre](https://github.com/cegep-electronique-programmable/Servo-Moteur-I2C-Master).
+### - Pour le driver de moteur brushless
+  Connection de la broche de signal PMW du driver de moteur brushless à la broche PA2 sur la carte STM32L412KBT3. 
+  Pour les autres broches, la broche d'alimentaion et connecter avec 12V et GND avec GND de la carte.
 
-## Fonctionnement
 
-Le **Servo Moteur I2C** reçoit des commandes *d'écriture*, codées sur 8 bits signés, via son bus I2C. Ensuite, il génère le signal PWM nécessaire pour commander le moteur.
+## Contrôle du servomoteur :
+- Utilisation des fonctions fournies pour envoyer des commandes au servomoteur la position et la vitesse.
 
-Lorsque le périphérique reçoit des commandes en écriture, il doit réagir de la manière suivante :
+## Contrôle du driver de moteur synchrone :
+- Utilisation des broches GPIO configurées précédemment pour envoyer les signaux de contrôle nécessaires au driver.
+- Implémentation des fonctions de contrôle appropriées pour démarrer/arrêter le moteur, régler la vitesse, etc.
 
-- De `-90` à `+90` : Positionner le moteur à la position demandée en °
-- `126` : Démarrer le signal PWM et aller à la position centrale
-- `127` : Arrêter le signal PWM
-- Toutes les autres valeurs ne font rien
+## Intégration et exécution :
+- Combinez les codes de contrôle du servomoteur et du driver de moteur synchrone dans le programme principal.
+- Televersement du code final sur la carte a l'aide du debuggeur STLINK.
 
-Le **Servo Moteur I2C** reçoit également des commandes de *lecture* via son bus I2C. Dans ce cas, il doit renvoyer sont état sous forme de **chaîne de caractères ASCII** :
-- `"-90"` à `"+90"` si le moteur est en fonctionnement
-- `"OFF"` si le PWM est désactivé
-
-### Bonus
-
-Ajouter une commande qui permet de changer l'adresse I2C du périphérique.
-- Au démarrage, le périphérique répond à l'adresse `0x23`.
-- On envoie une nouvelle commande en indiquant sa nouvelle adresse.
-- La périphérique répond maintenant à cette nouvelle adresse jusqu'au prochain redémarrage ou jusqu'au prochain changement d'addresse.
-
-## Test :
-
-Pour vérifier le bon fonctionnement, exécuter la séquence de test suivante avec une pause de `1 s` entre chaque action :
-
-1) Arrêter le signal PWM
-2) Démarrer le signal PWM et aller à la position centrale
-3) Aller à la position -90° 
-4) Demander l'état du moteur
-5) Aller à la position -45°
-6) Aller à la position +45°
-7) Aller à la position 0°
-8) Demander l'état du moteur
-9) Aller à la position +90° 
-10) Aller à la position +135° (Le moteur ne devrait pas bouger) 
-11) Demander l'état du moteur
-12) Aller à la position 0°
-13) Arrêter le signal PWM
-14) Demander l'état du moteur
-
-Il faudra utiliser un analyseur logique ou un oscilloscope pour confirmer l'arrêt du signal PWM.
+## Test et débogage :
+- Connection de la carte STM32L412KBT3 au servomoteur Dynamixel XL-320 et au driver de moteur synchrone.
+- Exécution du programme sur la carte et vérification si le servomoteur et le moteur synchrone fonctionnent comme prévu.
+- Utilisation des fonctionnalités de débogage de STM32CubeIDE en cas de problèmes pour identifier et résoudre les erreurs.

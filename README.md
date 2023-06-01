@@ -27,7 +27,7 @@
 # Réalisation
 
 ## PCB et Schematics
-À partir du schéma hardware ainsi que les composants énoncés dans la datasheet, il a été possible de réaliser un schematic à l'aide de Kicad. Ce schematic reprend les fonctions énoncées dans le schéma hardware. Nous avons eu besoin de consulter la datasheet pour réaliser les montages impliquant les régulateurs à découpage
+À partir du schéma hardware ainsi que les composants énoncés dans la datasheet, il a été possible de réaliser un schematic à l'aide de Kicad. Ce schematic reprend les fonctions énoncées dans le schéma hardware. Nous avons eu besoin de consulter la datasheet pour réaliser les montages impliquant les régulateurs à découpage MAX5033DUSA+. 
 
 # Difficultés rencontrées 
 * Nous avons fait face à plusieurs difficultés pour la réalisation du PCB, notamment par rapport au routage au vu de la taille de la carte et des composants à utiliser.

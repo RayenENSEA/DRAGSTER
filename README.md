@@ -34,7 +34,9 @@
 * Il y a eu des difficultés au moment de tester la carte puisque nous avons constater pendant la soudure des composants des défauts compromettant le fonctionnement de la carte
 # Enjeux environnementaux
 * 1 - Votre projet favorise-t-il des changements dans les modes de production et de consommation en vue de les rendre plus viables et plus responsables sur les plans social et environnemental ?
-
+ 
+Notre projet peut avoir un certain impact en faveur de changements dans les modes de production et de consommation premièrement par l'utilisation d'un Dragster fonctionnant avec un moteur éléctrique
+autonome. L'utilisation de moteurs éléctrique permet la réduction d'émission de gaz à effet de serre et permet donc de démontrer l'efficacité des technologies de propulsion éléctrique. L'exploitation des ressources utilisées permet au projet de pouvoir être réutilisé dans d'autres circonstances et sensibilise donc à la mobilité éléctrique en mettant l'accent sur la technologie de pointe et les performances écologiques concernant la mobilité durable.
 
 
 * 2 - Quelle réflexion avez-vous mené au cours de ce projet autour de la réutilisation possible d'éléments matériels après votre projet ?

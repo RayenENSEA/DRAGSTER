@@ -1,15 +1,12 @@
 /*
    Pour le servo-moteur :
 
-    Connectez la broche de signal du servo-moteur (généralement la broche de commande) à la broche PA0 sur
-	votre carte STM32.Assurez-vous que le servo-moteur est alimenté correctement avec une tension appropriée
-	(généralement de 5V).
-
+	Connection de la broche de signal PMW du servo-moteur à la broche PA0 sur la carte STM32L412KBT3. 
+Pour les autres broches de servo la broche d'alimentaion et connecter avec +7.5V et GND avec GND de la carte.
+ 
    Pour le driver de moteur brushless :
-
-    Connectez la broche de signal du driver de moteur brushless (généralement la broche de commande) à la broche PA2
-	sur votre carte STM32.ssurez-vous que le driver de moteur brushless est alimenté correctement avec la tension
-	appropriée selon ses spécifications.
+   
+        Connection de la broche de signal PMW du driver de moteur brushless à la broche PA2 sur la carte STM32L412KBT3. Pour les autres broches, la broche d'alimentaion et connecter avec 12V et GND avec GND de la carte..
 	*/
 
 

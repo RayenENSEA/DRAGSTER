@@ -45,6 +45,7 @@ https://github.com/RayenENSEA/DRAGSTER/blob/main/Software/README.md
 * Il y a eu des difficultés au moment de tester la carte puisque nous avons constater pendant la soudure des composants des défauts compromettant le fonctionnement de la carte
 * En raison du retard de la carte PCB, nous rencontrons des difficultés pour tester tous les codes que nous avons développés avec les autres composants. Cela nous a empêchés de réaliser l'étude d'asservissement et d'améliorer les performances des moteurs.
 * Les séances de soudure étaient très enrichissantes, nous avons découvert la technique de soudage sur PCB. En soudant des petits composants, il y a eu quelques court-circuits au début.
+* Les régulateurs de tensions ne fonctionnaient malheureusement pas comme nous le souhaitions.
 
 # Enjeux environnementaux
 * 1 - Votre projet favorise-t-il des changements dans les modes de production et de consommation en vue de les rendre plus viables et plus responsables sur les plans social et environnemental ?

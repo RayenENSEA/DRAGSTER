@@ -31,8 +31,8 @@
 
 ## Partie software
 Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un driver de moteur synchrone 50A en utilisant la carte STM32L412KBT3. 
-Il utilise l'environnement de développement STM32CubeIDE. Voici la descrption détaillée : 
-https://github.com/RayenENSEA/DRAGSTER/blob/main/Software/README.md
+Il utilise l'environnement de développement STM32CubeIDE. 
+Voici la descrption détaillée :  https://github.com/RayenENSEA/DRAGSTER/blob/main/Software/README.md
 
 ## Notes en cours de projet
 * Liste des composants : https://github.com/RayenENSEA/DRAGSTER/wiki/Liste-des-composants

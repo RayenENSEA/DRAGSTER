@@ -34,6 +34,11 @@ Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un 
 Il utilise l'environnement de développement STM32CubeIDE. Voici la descrption détaillée : 
 https://github.com/RayenENSEA/DRAGSTER/blob/main/Software/README.md
 
+## Notes en cours de projet
+* Liste des composants : https://github.com/RayenENSEA/DRAGSTER/wiki/Liste-des-composants
+* Notes globales : https://github.com/RayenENSEA/DRAGSTER/wiki/Notes
+* Point avec les professeurs : https://github.com/RayenENSEA/DRAGSTER/wiki/Point-prof-11.04
+
 
 # Difficultés rencontrées 
 * Nous avons fait face à plusieurs difficultés pour la réalisation du PCB, notamment par rapport au routage au vu de la taille de la carte et des composants à utiliser

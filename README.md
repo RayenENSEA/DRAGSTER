@@ -29,6 +29,11 @@
 ## PCB et Schematics
 À partir du schéma hardware ainsi que les composants énoncés dans la datasheet, il a été possible de réaliser un schematic à l'aide de Kicad. Ce schematic reprend les fonctions énoncées dans le schéma hardware. Nous avons eu besoin de consulter la datasheet pour réaliser les montages impliquant les régulateurs à découpage MAX5033DUSA+. 
 
+## Partie software
+Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un driver de moteur synchrone 50A en utilisant la carte STM32L412KBT3. 
+Il utilise l'environnement de développement STM32CubeIDE. Voici la descrption détaillée : https://github.com/RayenENSEA/DRAGSTER/blob/main/Software/README.md
+
+
 # Difficultés rencontrées 
 * Nous avons fait face à plusieurs difficultés pour la réalisation du PCB, notamment par rapport au routage au vu de la taille de la carte et des composants à utiliser.
 * Il y a eu des difficultés au moment de tester la carte puisque nous avons constater pendant la soudure des composants des défauts compromettant le fonctionnement de la carte

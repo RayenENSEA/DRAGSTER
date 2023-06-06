@@ -3,7 +3,10 @@ initialise les structures RCC_OscInitTypeDef et RCC_ClkInitTypeDef, configure le
 et configure les sources d'horloge pour les différents bus du microcontrôleur. Elle ne prend pas d'argument et a un
 type de retour void. Elle crée deux structures vides : RCC_OscInitStruct de type RCC_OscInitTypeDef et RCC_ClkInitStruct
 de type RCC_ClkInitTypeDef. Ces structures seront utilisées pour configurer les paramètres de l'horloge */
+
 #include "SystemClock_Config.h"
+#include "stm32l4xx_hal.h"
+#include "stm32l4xx_hal_tim.h"
 
 void SystemClock_Config(void)
 {

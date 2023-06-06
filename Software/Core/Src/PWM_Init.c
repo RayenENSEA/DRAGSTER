@@ -2,7 +2,8 @@
 servo-moteur et du driver de moteur brushless. Elle configure les broches GPIO en mode alternatif pour les canaux PWM,
 configure les timers avec les paramètres appropriés, et configure les canaux de sortie PWM avec les rapports cycliques
 initiaux spécifiés */
-
+#include "stm32l4xx_hal.h"
+#include "stm32l4xx_hal_tim.h"
 #include "PWM_Init.h"
 
 void PWM_Init(void)

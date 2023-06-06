@@ -32,6 +32,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+/* déclaration de la structure TIM_OC_InitTypeDef utilisée pour configurer les canaux de sortie des timers */
+TIM_OC_InitTypeDef sConfigOC;
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -46,16 +49,17 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-void SystemClock_Config(void);
+
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
+void PWM_Init(void);
 
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
-void PWM_Init(void);
+
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */

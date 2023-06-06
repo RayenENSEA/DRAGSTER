@@ -1,179 +1,65 @@
-/*
-   Pour le servo-moteur :
 
-	Connection de la broche de signal PMW du servo-moteur à la broche PA0 sur la carte STM32L412KBT3. 
-Pour les autres broches de servo la broche d'alimentaion et connecter avec +7.5V et GND avec GND de la carte.
- 
-   Pour le driver de moteur brushless :
-   
-        Connection de la broche de signal PMW du driver de moteur brushless à la broche PA2 sur la carte STM32L412KBT3. Pour les autres broches, la broche d'alimentaion et connecter avec 12V et GND avec GND de la carte..
-	*/
-
-
-
+/* Ces directives d'inclusion permettent d'importer les fichiers d'en-tête nécessaires pour utiliser les bibliothèques
+et les fonctionnalités spécifiques à la carte STM32 */
 #include "main.h"
 #include "stm32l4xx_hal.h"
 #include "stm32l4xx_hal_tim.h"
+#include "SystemClock_Config.c"
+#include "PWM_Init.c"
 
-/* Private variables ---------------------------------------------------------*/
+
+/* Ces déclarations créent des variables de type TIM_HandleTypeDef qui seront utilisées pour configurer et contrôler les
+timers TIM2 et TIM1, respectivement */
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim1;
 
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-void PWM_Init(void);
-void Error_Handler(void);
 
-/* Main function */
+/* La fonction main est le point d'entrée du programme. Elle appelle les fonctions HAL_Init pour initialiser la bibliothèque
+HAL, SystemClock_Config pour configurer l'horloge du système, et PWM_Init pour initialiser les timers et les broches
+GPIO utilisés pour le contrôle du servo-moteur et du driver de moteur brushless */
 int main(void)
 {
   HAL_Init();
   SystemClock_Config();
   PWM_Init();
 
+
+/* Cette boucle while représente la partie principale du programme qui s'exécute en boucle infinie. Elle contient des
+fonctions de contrôle du servo-moteur et du driver de moteur brushless. Les fonctions HAL_TIM_PWM_Start et
+HAL_TIM_PWM_Stop sont utilisées pour démarrer et arrêter les canaux PWM respectifs pour contrôler les dispositifs  */
   while (1)
   {
-    // Faire tourner le servo-moteur à 30 degrés (exemple)
-    // Utilisez la fonction HAL_TIM_PWM_Start() pour démarrer le canal PWM du servo-moteur
-    // et HAL_TIM_PWM_Stop() pour arrêter le canal PWM lorsque le mouvement est terminé
+	// Faire tourner le servo-moteur à 30 degrés
+	// Utiliser la fonction HAL_TIM_PWM_Start() pour démarrer le canal PWM du servo-moteur
+	// et HAL_TIM_PWM_Stop() pour arrêter le canal PWM lorsque le mouvement est terminé
+
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-    HAL_Delay(1000);  // Délai pour maintenir la position du servo-moteur
+    HAL_Delay(1000);  // Délai pour maintenir la position du servo-moteur '1s'
     HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1);
 
 
-    sConfigOC.Pulse = 1700; // À ajuster en fonction de votre servo et de la direction souhaitée
+    sConfigOC = 1700; // position intial du moteur
     HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
     HAL_Delay(2000);
 
 
-    // Contrôler le driver de moteur brushless (exemple)
-    // Utilisez la fonction HAL_TIM_PWM_Start() pour démarrer le canal PWM du driver de moteur
+    // Contrôle du driver de moteur brushless
+    // Utilison la fonction HAL_TIM_PWM_Start() pour démarrer le canal PWM du driver de moteur
     // et HAL_TIM_PWM_Stop() pour arrêter le canal PWM lorsque le contrôle est terminé
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_Delay(2000);  // Délai pour maintenir le contrôle du driver de moteur brushless
     HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
-
-
-
   }
 }
 
-/* System Clock Configuration */
-void SystemClock_Config(void)
-{
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
 
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK |
-                                RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
-
-/* PWM Initialization */
-void PWM_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
-
-  __HAL_RCC_TIM2_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-
-  // Configuration des broches GPIO en mode alternatif pour le canal PWM du servo-moteur
-  GPIO_InitStruct.Pin = GPIO_PIN_0;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF1_TIM2;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  // Configuration du timer TIM2 pour le servo-moteur
-  htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 0;
-  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 19999;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1500;  // Rapport cyclique initial pour le servo-moteur
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  __HAL_RCC_TIM1_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-
-  // Configuration des broches GPIO en mode alternatif pour le canal PWM du driver de moteur brushless
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF1_TIM15; // Utilisation de GPIO_AF1_TIM15 pour PA2
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  // Configuration du timer TIM1 pour le driver de moteur brushless
-  htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 0;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 9999;
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 5000;  // Rapport cyclique initial pour le driver de moteur brushless
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
-
-/* Error Handler */
+/* La fonction Error_Handler est appelée en cas d'erreur. Dans cet exemple, elle met simplement le microcontrôleur en
+boucle infinie, ce qui permet de détecter et de gérer les erreurs.Cela conclut l'explication du code fourni. Il s'agit
+d'un exemple générique pour le contrôle d'un servo-moteur et d'un driver de moteur brushless à l'aide des timers PWM de
+la carte STM32. Vous devrez ajuster les valeurs de pulsation (Pulse) en fonction de votre matériel spécifique */
 void Error_Handler(void)
 {
   while (1)

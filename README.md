@@ -24,6 +24,8 @@
 * Github
 * KiCad pour la réalisation des schematics et PCB 
 * STM32CubeIDE pour la réalisation de la partie Software
+* Draw.io pour la réalisation de schémas
+* Redmine pour distribuer les tâches et contruire le diagramme de Gantt
 
 # Réalisation
 

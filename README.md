@@ -58,7 +58,7 @@ Voici la description détaillée :  https://github.com/RayenENSEA/DRAGSTER/blob/
 * En raison du retard de la carte PCB, nous rencontrons des difficultés pour tester tous les codes que nous avons développés avec les autres composants. Cela nous a empêché de réaliser l'étude d'asservissement et d'améliorer les performances des moteurs.
 * Les séances de soudure étaient très enrichissantes, nous avons découvert la technique de soudage sur PCB. En soudant des petits composants, il y a eu quelques court-circuits au début.
 * Le professeur nous a ensuite conseillé d'essayer une 2ème version du PCB (plaque sans le vernis) pour réduire les risques de dysfonctionnement de la carte.
-* Les régulateurs de tension ne fonctionnaient malheureusement pas comme nous le souhaitions. Il y avait de courtes phases de régulation puis la tension affichée était celle de l'alimentation.
+* Les régulateurs de tension ne fonctionnaient pas comme nous le souhaitions lorsqu'ils étaient à vide ou qu'il y avait une petite charge. Il y avait de courtes phases de régulation puis la tension affichée était celle de l'alimentation.
 * Nous avons quand même tenu à terminer le soudage des composants sur la carte pour observer le résultat final et plusieurs composants comme les LEDs fonctionnaient comme prévu.
 
 # Enjeux environnementaux
@@ -79,3 +79,5 @@ Finalement, si des matériaux ne peuvent être recyclés ou réparer, il est pos
 # Présentation soutenance
 
 [Dragster project.pdf](https://github.com/RayenENSEA/DRAGSTER/files/11707936/Dragster.project.pdf)
+
+Lors de la présentation de notre projet, nous avons réussi à monter une maquette complète avec les différents composants et à les alimenter avec les bonnes tensions. En effet, nous avons eu la bonne surprise de découvrir que les régulateurs agissaient de manière correcte lorsque nous avons connecté toutes les pièces entre elles. De plus, après un ultime essai de téléversement du code vers le microcontrolleur, celui-ci a également fonctionné.

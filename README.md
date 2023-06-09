@@ -28,6 +28,10 @@
 À partir du schéma hardware ainsi que les composants énoncés dans la datasheet, il a été possible de réaliser un schematic à l'aide de Kicad. Ce schematic reprend les fonctions énoncées dans le schéma hardware. Nous avons eu besoin de consulter les datasheets pour réaliser les montages impliquant notamment les régulateurs à découpage MAX5033DUSA+ pour les tensions 7.4 V et  3.3 V.
 Le schéma hardware est disponible sous le nom "Schéma Hardaware.drawio" dans le dossier suivant : https://github.com/RayenENSEA/DRAGSTER/tree/main/Hardware.
 
+## Régulateur à découpage
+Comme détaillé precedemment, notre projet comprennait la réalisation de 2 régulateurs pour obtenir les tensions 7.4 V et  3.3 V.
+Nos professeurs nous ont conseillés d'opter pour un régulateur plutôt que pour un régulateur linéaire LDO.
+En effet, bien que plus compliqués à réaliser, les régulateurs à découpage ont un rendement compris entre 80 % et 90 %, bien plus grand que les régulateurs linéaires.
 
 ## Partie software
 Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un driver de moteur synchrone 50A en utilisant la carte STM32L412KBT3. 

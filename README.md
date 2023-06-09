@@ -31,7 +31,7 @@ Le schéma hardware est disponible sous le nom "Schéma Hardaware.drawio" dans l
 ## Régulateur à découpage
 Comme détaillé precedemment, notre projet comprennait la réalisation de 2 régulateurs pour obtenir les tensions 7.4 V et  3.3 V.
 Nos professeurs nous ont conseillés d'opter pour un régulateur plutôt que pour un régulateur linéaire LDO.
-En effet, bien que plus compliqués à réaliser, les régulateurs à découpage ont un rendement compris entre 80 % et 90 %, bien plus grand que les régulateurs linéaires.
+En effet, bien que plus compliqués à réaliser, les régulateurs à découpage ont un rendement compris entre 80 % et 90 %, bien plus grand que les régulateurs linéaires. Ces derniers ont en plus la mauvaise caractéristque de dissiper beaucoup de chaleur.
 
 ## Partie software
 Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un driver de moteur synchrone 50A en utilisant la carte STM32L412KBT3. 

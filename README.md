@@ -29,6 +29,7 @@
 
 ## PCB et Schematics
 À partir du schéma hardware ainsi que les composants énoncés dans la datasheet, il a été possible de réaliser un schematic à l'aide de Kicad. Ce schematic reprend les fonctions énoncées dans le schéma hardware. Nous avons eu besoin de consulter les datasheets pour réaliser les montages impliquant notamment les régulateurs à découpage MAX5033DUSA+ pour les tensions 7.4 V et  3.3 V.
+
 Le schéma hardware est disponible sous le nom "Schéma Hardaware.drawio" dans le dossier suivant : https://github.com/RayenENSEA/DRAGSTER/tree/main/Hardware.
 
 ## Régulateur à découpage

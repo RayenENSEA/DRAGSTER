@@ -33,6 +33,8 @@ Comme détaillé precedemment, notre projet comprennait la réalisation de 2 ré
 Nos professeurs nous ont conseillés d'opter pour un régulateur plutôt que pour un régulateur linéaire LDO.
 En effet, bien que plus compliqués à réaliser, les régulateurs à découpage ont un rendement compris entre 80 % et 90 %, bien plus grand que les régulateurs linéaires. Ces derniers ont en plus la mauvaise caractéristique de dissiper beaucoup de chaleur.
 
+Cependant, la compléxité des régulateurs à découpage est plus élevée car ils necessitent plusieurs composants pour leur réalisation : des inductances, des diodes et des condensateurs de filtrage ainsi que le circuit intégré.
+
 ## Partie software
 Ce projet permet de contrôler à la fois un servomoteur Dynamixel XL-320 et un driver de moteur synchrone 50A en utilisant la carte STM32L412KBT3. 
 Il utilise l'environnement de développement STM32CubeIDE. 

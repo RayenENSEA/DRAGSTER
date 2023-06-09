@@ -34,7 +34,7 @@ Le schéma hardware est disponible sous le nom "Schéma Hardaware.drawio" dans l
 
 ## Régulateur à découpage
 Comme détaillé precedemment, notre projet comprennait la réalisation de 2 régulateurs pour obtenir les tensions 7.4 V et  3.3 V.
-Nos professeurs nous ont conseillés d'opter pour un régulateur plutôt que pour un régulateur linéaire LDO.
+Nos professeurs nous ont conseillés d'opter pour des régulateurs à découpage plutôt que pour des régulateurs linéaires LDO.
 
 En effet, bien que plus compliqués à réaliser, les régulateurs à découpage ont un rendement compris entre 80 % et 90 %, bien plus grand que les régulateurs linéaires. Ces derniers ont en plus la mauvaise caractéristique de dissiper beaucoup de chaleur.
 

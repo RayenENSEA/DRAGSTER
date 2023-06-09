@@ -80,4 +80,6 @@ Finalement, si des matériaux ne peuvent être recyclés ou réparer, il est pos
 
 [Dragster project.pdf](https://github.com/RayenENSEA/DRAGSTER/files/11707936/Dragster.project.pdf)
 
-Lors de la présentation de notre projet, nous avons réussi à monter une maquette complète avec les différents composants et à les alimenter avec les bonnes tensions. En effet, nous avons eu la bonne surprise de découvrir que les régulateurs agissaient de manière correcte lorsque nous avons connecté toutes les pièces entre elles. De plus, après un ultime essai de téléversement du code vers le microcontrolleur, celui-ci a également fonctionné.
+Lors de la présentation de notre projet, nous avons réussi à monter une maquette complète avec les différents composants et à les alimenter avec les bonnes tensions. 
+
+En effet, nous avons eu la bonne surprise de découvrir que les régulateurs agissaient de manière correcte lorsque nous avons connecté toutes les pièces entre elles. De plus, après un ultime essai de téléversement du code vers le microcontrolleur, celui-ci a également fonctionné.

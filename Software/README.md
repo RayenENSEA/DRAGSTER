@@ -9,7 +9,7 @@ Il utilise l'environnement de développement STM32CubeIDE.
 ## Configuration des broches GPIO :
 ### - Pour le servo-moteur :
   Connection de la broche de signal PMW du servo-moteur à la broche PA0 sur la carte STM32L412KBT3. 
-  Pour les autres broches de servo la broche d'alimentaion et connecter avec +7.5V et GND avec GND de la carte.
+  Pour les autres broches de servo la broche d'alimentation est connectée avec +7.5V et GND avec le GND de la carte.
 
 ### - Pour le driver de moteur brushless
   Connection de la broche de signal PMW du driver de moteur brushless à la broche PA2 sur la carte STM32L412KBT3. 
